@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetBranches">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBranchesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBranchesResult" type="tns:ArrayOfBranch" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBranch">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Branch" nillable="true" type="tns:Branch" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Branch">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="branch_code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="branch_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address_line_1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address_line_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address_line_3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address_line_4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address_line_5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="telephone_number" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fax_number" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email_address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pricelevel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tax_number" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="is_blocked" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="is_head_office" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="branch_type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="merchant_number" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="updated" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="return_message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="target" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="longitude" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="latitude" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tURL" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUsersTesting">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersTestingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUsersTestingResult" type="tns:ArrayOfUserPermissions" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUserPermissions">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserPermissions" nillable="true" type="tns:UserPermissions" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserPermissions">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="user_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="user_password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="branch_code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="is_head_office_user" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="is_locked_to_branch" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="pos_sequence" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="maintenance_sequence" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="transaction_sequence" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isp27" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSomeStockcodesTesting">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSomeStockcodesTestingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSomeStockcodesTestingResult" type="tns:ArrayOfStockcodes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStockcodes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Stockcodes" nillable="true" type="tns:Stockcodes" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Stockcodes">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="generated_code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="master_code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="category_1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="category_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="category_3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sku_number" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="is_service_item" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="purchase_tax_group" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sales_tax_group" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="supplier" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="suppliers_code" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="is_not_discountable" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="is_blocked" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="minimum_stock_level" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="item_size" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="item_colour" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="size_matrix" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="colour_matrix" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="cost_price" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="estimated_cost" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="selling_price_1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="selling_price_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="selling_price_3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="updated" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="created" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="qty_on_hand" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetBranchesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBranches" />
+  </wsdl:message>
+  <wsdl:message name="GetBranchesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBranchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersTestingSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsersTesting" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersTestingSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsersTestingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSomeStockcodesTestingSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSomeStockcodesTesting" />
+  </wsdl:message>
+  <wsdl:message name="GetSomeStockcodesTestingSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSomeStockcodesTestingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="testingSoap">
+    <wsdl:operation name="GetBranches">
+      <wsdl:input message="tns:GetBranchesSoapIn" />
+      <wsdl:output message="tns:GetBranchesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersTesting">
+      <wsdl:input message="tns:GetUsersTestingSoapIn" />
+      <wsdl:output message="tns:GetUsersTestingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSomeStockcodesTesting">
+      <wsdl:input message="tns:GetSomeStockcodesTestingSoapIn" />
+      <wsdl:output message="tns:GetSomeStockcodesTestingSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="testingSoap" type="tns:testingSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBranches">
+      <soap:operation soapAction="http://tempuri.org/GetBranches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersTesting">
+      <soap:operation soapAction="http://tempuri.org/GetUsersTesting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSomeStockcodesTesting">
+      <soap:operation soapAction="http://tempuri.org/GetSomeStockcodesTesting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="testingSoap12" type="tns:testingSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBranches">
+      <soap12:operation soapAction="http://tempuri.org/GetBranches" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersTesting">
+      <soap12:operation soapAction="http://tempuri.org/GetUsersTesting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSomeStockcodesTesting">
+      <soap12:operation soapAction="http://tempuri.org/GetSomeStockcodesTesting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="testing">
+    <wsdl:port name="testingSoap" binding="tns:testingSoap">
+      <soap:address location="http://myrage.co.za/testing/testing.asmx" />
+    </wsdl:port>
+    <wsdl:port name="testingSoap12" binding="tns:testingSoap12">
+      <soap12:address location="http://myrage.co.za/testing/testing.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
